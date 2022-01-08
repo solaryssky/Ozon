@@ -1,5 +1,4 @@
-### Ozon
-инструменты для работы с Ozon API
+### инструменты для работы с Ozon API
 
 **Ozon.postman_collection.json**
 - JSON для импорта в Postman примеров запросов к Ozon API 
