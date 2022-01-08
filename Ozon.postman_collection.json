@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "7f47f4a0-ca66-4a47-a07f-b545454444",
+		"name": "Ozon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Количество товаров",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"description": "идентификатор клиента",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"description": "ключь",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"page\": 1,\r\n\"page_size\": 1\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v2/product/info/stocks",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"product",
+						"info",
+						"stocks"
+					]
+				},
+				"description": "Информация о количестве товаров"
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить товар",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"attributes\": [\r\n{\r\n                    \"id\": 8229,\r\n                    \"complex_id\": 0,\r\n                    \"values\": [\r\n                        {\r\n                            \"dictionary_value_id\": 94167,\r\n                            \"value\": \"Гидрокостюм\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": 85,\r\n                    \"complex_id\": 0,\r\n                    \"values\": [\r\n                        {\r\n                            \"dictionary_value_id\": 970896248,\r\n                            \"value\": \"Aqua Discovery\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": 9048,\r\n                    \"complex_id\": 0,\r\n                    \"values\": [\r\n                        {\r\n                            \"dictionary_value_id\": 0,\r\n                            \"value\": \"Есаул\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"id\": 9390,\r\n                    \"complex_id\": 0,\r\n                    \"values\": [\r\n                        {\r\n                            \"dictionary_value_id\": 43241,\r\n                            \"value\": \"Взрослая\"\r\n                        }\r\n                    ]\r\n                }\r\n    ],\r\n      \"barcode\": \"112772874170\",\r\n      \"category_id\": 17038303,\r\n      \"color_image\": \"\",\r\n      \"complex_attributes\": [],\r\n      \"depth\": 1000,\r\n      \"dimension_unit\": \"mm\",\r\n      \"height\": 250,\r\n      \"images\": [\"https://batiur.ru/image/catalog/fototovarov/podvodka/gidrokostjumy/beuchatmundialpacific1.5mm.jpeg\"],\r\n      \"images360\": [],\r\n      \"name\": \"Гидрокостюм Aquadiscovery Есаул, 15мм\",\r\n      \"offer_id\": \"A00000_08\",\r\n      \"old_price\": \"3000\",\r\n      \"pdf_list\": [],\r\n      \"premium_price\": \"999\",\r\n      \"price\": \"2000\",\r\n      \"primary_image\": \"\",\r\n      \"vat\": \"0.1\",\r\n      \"weight\": 1000,\r\n      \"weight_unit\": \"g\",\r\n      \"width\": 1050\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v2/product/import",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"product",
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Описание товара",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"offer_id\": \"A44136_52\",\r\n\"product_id\": 102596663\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v1/product/info/description",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"product",
+						"info",
+						"description"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список товаров",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"filter\": {\r\n    \"offer_id\": [\r\n      \"A44136_52\"\r\n    ],\r\n    \"product_id\": [102596663]\r\n  },\r\n  \"page\": 1,\r\n  \"page_size\": 100\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v1/product/list",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Информация о товарах",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"offer_id\": \"A44136_52\",\r\n\"product_id\": 102596663,\r\n\"sku\": 0\r\n\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v2/product/info",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"product",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Описание характеристик товара",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"filter\": {\r\n\"offer_id\": [\"A44136_52\"],\r\n\"product_id\": [102596663]\r\n},\r\n\"page\": 1,\r\n\"page_size\": 100\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v2/products/info/attributes",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"products",
+						"info",
+						"attributes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Справочник характеристик",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"attribute_id\": 8229,\r\n\"category_id\": 17038303,\r\n\"language\": \"DEFAULT\",\r\n\"last_value_id\": 0,\r\n\"limit\": 1000\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v2/category/attribute/values",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v2",
+						"category",
+						"attribute",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Список характеристик категории",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"attribute_type\": \"REQUIRED\",\r\n\"category_id\": [17038303],\r\n\"language\": \"DEFAULT\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v3/category/attribute",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v3",
+						"category",
+						"attribute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cтатус добавления товара",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"task_id\": \"172549793\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v1/product/import/info",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"product",
+						"import",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновить остатки",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Api-Key",
+						"value": "0000000-0000-0000-0000-000000000000",
+						"type": "text"
+					},
+					{
+						"key": "Client-Id",
+						"value": "00000",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api-seller.ozon.ru",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stocks\": [\r\n    {\r\n      \"offer_id\": \"713443_S\",\r\n      \"product_id\": 0,\r\n      \"stock\": 4\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://api-seller.ozon.ru/v1/product/import/stocks",
+					"protocol": "https",
+					"host": [
+						"api-seller",
+						"ozon",
+						"ru"
+					],
+					"path": [
+						"v1",
+						"product",
+						"import",
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
