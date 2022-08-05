@@ -67,20 +67,3 @@ function web_post( $url, $arguments = [], $headers =  '', $sleep = 0, $timeout =
 
 $json = web_post( $url, json_encode($arguments), $headers);
 $result = json_decode($json, true);
-
-//получаем информацию о товаре
-
-$url = 'https://api-seller.ozon.ru/v1/product/info/description';
-
-foreach($result['result']['items'] as $value){
-	$product_id = $value['product_id'];
-	$offer_id = $value['offer_id'];
-	
-	$arguments = array(
-            'offer_id' => $offer_id,
-            'product_id' => $product_id
-			);
-	
-$json = web_post( $url, json_encode($arguments), $headers);
-$result_2[] = json_decode($json, true);	
-}
